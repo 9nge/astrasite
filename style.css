@@ -1,6 +1,6 @@
-/* ==================== CSS ПЕРЕМЕННЫЕ ==================== */
+
 :root {
-    /* Цвета — черно-красно-оранжевая гамма */
+
     --bg-deep: #08080f;
     --bg-surface: #12121a;
     --glass-bg: rgba(255, 255, 255, 0.03);
@@ -20,34 +20,33 @@
     --success: #2ecc71;
     --white-soft: rgba(255, 255, 255, 0.9);
 
-    /* Типографика */
+
     --font-body: 'Inter', system-ui, -apple-system, sans-serif;
     --font-display: 'Play', 'Inter', sans-serif;
 
-    /* Радиусы */
     --radius-sm: 10px;
     --radius-md: 16px;
     --radius-lg: 24px;
     --radius-xl: 32px;
 
-    /* Тени */
+
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
     --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.35);
     --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.45);
     --shadow-glow-orange: 0 0 40px var(--accent-orange-glow);
 
-    /* Переходы */
+
     --transition-fast: 0.2s ease;
     --transition-base: 0.3s ease;
     --transition-slow: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1.2);
 
-    /* Размеры */
+
     --header-height-expanded: 100px;
     --header-height-collapsed: 64px;
     --container-max: 1200px;
 }
 
-/* ==================== СБРОС И БАЗА ==================== */
+
 *,
 *::before,
 *::after {
@@ -110,7 +109,7 @@ select {
     border-radius: 4px;
 }
 
-/* ==================== ФОН ==================== */
+
 .bg-stars {
     position: fixed;
     inset: 0;
@@ -195,7 +194,7 @@ select {
     75% { transform: translate(-35px, -15px) scale(1.05); }
 }
 
-/* ==================== GLASS-ПАНЕЛИ ==================== */
+
 .glass-panel {
     background: var(--glass-bg);
     backdrop-filter: blur(16px);
@@ -214,7 +213,7 @@ select {
     box-shadow: var(--shadow-md);
 }
 
-/* ==================== ХЕДЕР И НАВИГАЦИЯ ==================== */
+
 .header {
     position: fixed;
     top: 0;
@@ -328,7 +327,7 @@ select {
     box-shadow: 0 0 30px var(--accent-orange-glow);
 }
 
-/* Бургер */
+
 .nav__burger {
     display: flex;
     flex-direction: column;
@@ -454,14 +453,14 @@ select {
     box-shadow: 0 0 20px var(--accent-orange-glow);
 }
 
-/* ==================== MAIN ==================== */
+
 .main {
     position: relative;
     z-index: 1;
     padding-top: calc(var(--header-height-expanded) + 24px);
 }
 
-/* ==================== HERO ==================== */
+
 .hero {
     position: relative;
     min-height: 100vh;
@@ -536,7 +535,7 @@ select {
     justify-content: center;
 }
 
-/* Персонажи */
+
 .hero__visual {
     position: absolute;
     inset: 0;
@@ -573,7 +572,7 @@ select {
     50% { transform: translateY(-20px); }
 }
 
-/* ==================== КНОПКИ ==================== */
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -627,7 +626,6 @@ select {
     justify-content: center;
 }
 
-/* ==================== АНИМАЦИИ ПОЯВЛЕНИЯ ==================== */
 .fade-in-section {
     opacity: 0;
     transform: translateY(30px);
@@ -639,7 +637,6 @@ select {
     transform: translateY(0);
 }
 
-/* ==================== СЕКЦИИ ==================== */
 .section-title {
     font-family: var(--font-display);
     font-size: 2rem;
@@ -697,7 +694,7 @@ select {
     line-height: 1.7;
 }
 
-/* Статус */
+
 .status {
     padding: 40px 20px 80px;
     max-width: var(--container-max);
@@ -731,7 +728,7 @@ select {
     line-height: 1.7;
 }
 
-/* ==================== СТРАНИЦА ABOUT ==================== */
+
 .page-header {
     text-align: center;
     padding: 60px 20px 30px;
@@ -840,7 +837,7 @@ select {
     line-height: 1.6;
 }
 
-/* ==================== СТРАНИЦА RULES ==================== */
+
 .rules-list {
     padding: 20px 20px 60px;
     max-width: 750px;
@@ -888,7 +885,7 @@ select {
     line-height: 1.6;
 }
 
-/* ==================== СТРАНИЦА APPLY ==================== */
+
 .apply-section {
     padding: 20px 20px 60px;
     max-width: 600px;
@@ -977,7 +974,7 @@ select {
     text-align: center;
 }
 
-/* Модалка успеха */
+
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -1038,7 +1035,7 @@ select {
     line-height: 1.6;
 }
 
-/* ==================== ФУТЕР ==================== */
+
 .footer {
     position: relative;
     z-index: 1;
@@ -1083,7 +1080,7 @@ select {
     color: var(--accent-orange);
 }
 
-/* ==================== АДАПТИВ: 768px ==================== */
+
 @media (min-width: 768px) {
     .header {
         padding: 16px 24px;
@@ -1160,7 +1157,6 @@ select {
     }
 }
 
-/* ==================== АДАПТИВ: 1440px ==================== */
 @media (min-width: 1440px) {
     .header {
         padding: 20px 32px;
