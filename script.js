@@ -1,9 +1,9 @@
-// ==================== КОНФИГУРАЦИЯ TELEGRAM ====================
+
 const BOT_TOKEN = '8912215951:AAGl3kAjQk9rDLd0npURs-2yYP-2pa8FPoc';
 const CHAT_ID = '-1004378562071'; // ID группы "Заявки Astra"
 const MESSAGE_THREAD_ID = 6; // ID топика (ветки), куда приходят сообщения
 
-// ==================== МОБИЛЬНОЕ МЕНЮ ====================
+
 const burger = document.querySelector('.nav__burger');
 const mobileOverlay = document.querySelector('.mobile-overlay');
 const mobileClose = document.querySelector('.mobile-menu__close');
@@ -49,7 +49,6 @@ mobileLinks?.forEach(link => {
     link.addEventListener('click', closeMobileMenu);
 });
 
-// ==================== ESC KEY ====================
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         if (mobileOverlay?.classList.contains('mobile-overlay--open')) {
@@ -61,8 +60,6 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
-
-// ==================== СКРОЛЛ-ЭФФЕКТ ШАПКИ ====================
 const nav = document.querySelector('.nav');
 
 const handleScroll = () => {
@@ -76,7 +73,6 @@ const handleScroll = () => {
 window.addEventListener('scroll', handleScroll, { passive: true });
 handleScroll();
 
-// ==================== АНИМАЦИЯ ПОЯВЛЕНИЯ СЕКЦИЙ ====================
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -92,25 +88,24 @@ document.querySelectorAll('.fade-in-section').forEach(section => {
     observer.observe(section);
 });
 
-// ==================== ОТПРАВКА В TELEGRAM ====================
 const sendToTelegram = async (data) => {
     const { nickname, telegram, age, about } = data;
 
-    const message = `📋 <b>Новая заявка на Astra Create</b>\n\n` +
+    const message = `<b>Новая заявка на Astra Create</b>\n\n` +
                    `<b>NickName:</b> ${nickname}\n` +
                    `<b>Telegram:</b> ${telegram}\n` +
                    `<b>Age:</b> ${age}\n` +
                    `<b>About me:</b> ${about}\n\n` +
-                   `🕐 <i>${new Date().toLocaleString('ru-RU')}</i>`;
+                   `<i>${new Date().toLocaleString('ru-RU')}</i>`;
 
     const payload = {
         chat_id: CHAT_ID,
         text: message,
         parse_mode: 'HTML',
-        message_thread_id: MESSAGE_THREAD_ID // Отправка в нужный топик
+        message_thread_id: MESSAGE_THREAD_ID
     };
 
-    console.log('📤 Отправляю в Telegram:', payload);
+    console.log('Отправляю в Telegram:', payload);
 
     try {
         const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
@@ -135,7 +130,6 @@ const sendToTelegram = async (data) => {
     }
 };
 
-// ==================== ВАЛИДАЦИЯ ФОРМЫ ====================
 const applyForm = document.getElementById('apply-form');
 
 if (applyForm) {
@@ -165,7 +159,7 @@ if (applyForm) {
             validate: (val) => {
                 const age = parseInt(val, 10);
                 if (!val.trim()) return 'Укажите ваш возраст';
-                if (isNaN(age) || age < 10 || age > 99) return 'Введите корректный возраст (10-99)';
+                if (isNaN(age) || age < 14 || age > 99) return 'Введите корректный возраст (14-99)';
                 return '';
             }
         },
@@ -288,7 +282,6 @@ if (applyForm) {
     });
 }
 
-// ==================== МОДАЛКА УСПЕХА ====================
 const showSuccessModal = () => {
     const modal = document.querySelector('.modal-overlay');
     if (modal) {
