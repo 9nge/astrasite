@@ -1118,11 +1118,11 @@ select {
     }
 
     .hero__character--left {
-        left: 5%;
+        left: 10%;
     }
 
     .hero__character--right {
-        right: 5%;
+        right: 10%;
     }
 
 .features__grid {
@@ -1187,11 +1187,11 @@ select {
     }
 
     .hero__character--left {
-        left: 8%;
+        left: 13%;
     }
 
     .hero__character--right {
-        right: 8%;
+        right: 13%;
     }
 
     .features__grid {
